@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+body {
+    color: #ffff;
+}
+.container {
+    width: 98%;
+    margin:20px auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-template-rows: repeat(1,1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+}
+.container img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+.container .horizontal {
+    grid-column: auto / span 4;
+    grid-row: auto / span 2;
+    position: relative;
+    overflow: hidden;
+}
+.container .vertical {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    overflow: hidden;
+    position: relative;
+}
+.container .horizontal .content , .container .vertical .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding:10px 20px;
+    transform: translateY(60px);
+    transition: 0.3s all ease;
+    background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.2))
+}
+.container .horizontal .content ul li , .container .vertical .content ul li{
+    display: inline-block;
+    cursor: pointer;
+}
+.container .horizontal:hover .content , .container .vertical:hover  .content {
+    transform: translateY(0);
+}
+
+/* .box h3, .box p {
+    color: green;
+} */
